@@ -17,7 +17,7 @@ export default function UpdateContact() {
     }
 
     try {
-      const res = await fetch(`http://localhost:8081/contacts/${searchName}`);
+      const res = await fetch(`https://cs3870-backend-3kj9.onrender.com/contacts/${searchName}`);
       const data = await res.json().catch(() => null);
 
       if (res.status === 200) {
@@ -37,7 +37,7 @@ export default function UpdateContact() {
     setResponseMsg("");
 
     try {
-      const res = await fetch(`http://localhost:8081/contacts/${searchName}`, {
+      const res = await fetch(`https://cs3870-backend-3kj9.onrender.com/contacts/${searchName}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -127,5 +127,3 @@ export default function UpdateContact() {
     </div>
   );
 }
-
-
