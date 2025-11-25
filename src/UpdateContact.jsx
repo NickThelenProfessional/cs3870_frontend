@@ -17,9 +17,7 @@ export default function UpdateContact() {
     }
 
     try {
-      const res = await fetch(
-        `http://localhost:8081/contacts/${searchName}`
-      );
+      const res = await fetch(`http://localhost:8081/contacts/${searchName}`);
       const data = await res.json().catch(() => null);
 
       if (res.status === 200) {
@@ -129,4 +127,5 @@ export default function UpdateContact() {
     </div>
   );
 }
+
 
