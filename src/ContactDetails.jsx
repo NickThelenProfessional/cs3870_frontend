@@ -16,7 +16,7 @@ export default function ContactDetails() {
     }
 
     try {
-      const res = await fetch(`http://localhost:8081/contacts/${searchName}`);
+      const res = await fetch(`https://cs3870-backend-3kj9.onrender.com/contacts/${searchName}`);
 
       const data = await res.json().catch(() => null);
 
@@ -76,4 +76,3 @@ export default function ContactDetails() {
     </div>
   );
 }
-
