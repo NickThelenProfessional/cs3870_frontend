@@ -17,10 +17,8 @@ export default function UpdateContact() {
     }
 
     try {
-      const encodedName = encodeURIComponent(searchName);
-
       const res = await fetch(
-        `https://cs3870-backend-3kj9.onrender.com/contacts/${encodedName}`
+        `https://cs3870-backend-3kj9.onrender.com/contacts/${searchName}`
       );
       const data = await res.json().catch(() => null);
 
@@ -41,8 +39,7 @@ export default function UpdateContact() {
     setResponseMsg("");
 
     try {
-      const encodedName = encodeURIComponent(searchName);
-      const res = await fetch(`https://cs3870-backend-3kj9.onrender.com/contacts/${encodedName}`, {
+      const res = await fetch(`https://cs3870-backend-3kj9.onrender.com/contacts/${searchName}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
